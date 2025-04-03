@@ -23,7 +23,7 @@ body::before {
 }
 
 .contenedor {
-    background-image: url('./Imagenes/delicioso-taco-carne-res-fondo-transparente.png');
+    background-image: url('/Menu Cantarito/Imagenes/delicioso-taco-carne-res-fondo-transparente.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
