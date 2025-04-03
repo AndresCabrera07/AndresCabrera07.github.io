@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+img{
+    width: 90%;
+    object-fit: cover;
+}
+
+/* Contenedor */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); 
+    z-index: -2; /* Asegura que el degradado esté por debajo de todo */
+}
+
+.contenedor {
+    background-image: url('./Imagenes/delicioso-taco-carne-res-fondo-transparente.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1; /* Para que la imagen esté por encima del degradado */
+    background-color: rgba(0, 0, 0, 0.8); /* Agrega una capa oscura */
+    background-blend-mode: multiply; /* Mezcla la imagen con el color oscuro */
+}
+
+
+/* Header -Menu */
+.header{
+    padding-top: 10px;
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background-size: contain; /* O prueba con 'cover' si quieres que ocupe toda la pantalla */
+    background-position: center;
+    max-height: 500px; /* Ajusta la altura máxima para pantallas grandes */
+}
+.header img{
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* Ajusta el valor según necesites */
+    object-fit: contain;
+}
+@media (min-width: 1024px) {
+    .header img {
+        max-height: 400px; /* Reduce el tamaño en pantallas grandes */
+    }
+}
+
+/* Navegacion */
+.menu{
+    display: flex;
+}
+@media (min-width:768px) {
+    .menu{
+        display: flex;
+    }
+}
+.navegacion{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    gap: 20px;
+}
+@media (min-width:768px) {
+    .navegacion{
+        gap: 30px;
+    }
+}
+@media (min-width:992px) {
+    .navegacion{
+        gap: 50px;
+    }
+}
+.navegacion a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 15px;
+}
+.navegacion a:hover{
+    color: rgb(242, 255, 64);
+}
+.navegacion li:last-child{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.navegacion li:last-child a{
+   font-weight: 700; 
+}
+.navegacion li:last-child a:last-child{
+    background-color: rgb(166, 7, 214);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(166, 7, 214);
+}
+.navegacion li:last-child a:last-child:hover{
+    background-color: rgb(166, 7, 214);
+    color: rgb(242, 255, 64);
+}
+/* Información Banner */
+.presentacion{
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (min-width:768px) {
+    .presentacion{
+        flex-direction: row;
+    }
+}
+/* Información */
+.informacion{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: rgb(255, 255, 255);
+}
+@media (min-width:768px) {
+    .informacion{
+        text-align: start;
+        align-items: flex-start;
+    }
+}
+.informacion--boton button{
+    padding: 10px;
+    background-color: rgb(166, 7, 214);
+    border: 1px solid rgb(166, 7, 214);
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.informacion--boton button:hover{
+    background-color: rgb(166, 7, 214);
+    color: rgb(242, 255, 64);
+    cursor: pointer;
+}
+/* Información imagen */
+.presentacion--imagen{
+    max-width: 300px;
+    filter: drop-shadow(0 1mm 3mm rgb(166, 7, 214));
+}
+@media (min-width:456px) {
+    .presentacion--imagen{
+        max-width: 500px;
+    }
+}
+@media (min-width:1024px) {
+    .presentacion--imagen{
+        max-width: 800px;
+    }
+}
+/* Seccion platos */
+.comida{
+    width: 90%;
+    margin-inline:auto;
+}
+.platos{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 85px;
+}
+@media (min-width:768px) {
+    .platos{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width:992px) {
+    .platos{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+.comida--titulo{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 85px;
+    color: rgb(255, 255, 255);
+}
+@media (min-width:768px) {
+    .comida--titulo{
+        text-align: start;
+    }
+}
+/* Contenedor de tarjetas */
+.plato{
+    width: 80%;
+    margin-inline:auto;
+    background-color:rgb(166, 7, 214);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgba(196, 196, 196, 0.426);
+}
+.plato h1{
+    color: white;
+}
+.plato h3{
+    color: white;
+}
+.plato img{
+    width: 150px;
+    filter: drop-shadow(0 0 0.9rem rgb(166, 7, 214));
+    margin-top: -85px;
+}
+.plato p{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+.plato--info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+}
+.plato--info p{
+    font-weight: 900;
+}
+
+.plato {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.plato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plato--descripcion {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/*Boton de regreso*/
+.boton-regreso {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+.boton-regreso:hover {
+    background: rgb(166, 7, 214);
+    color: rgb(242, 255, 64);
+}
+
+
+/*Boton mas*/
+
+.plato--info {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgb(0, 0, 0);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(247, 242, 242, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.plato--info:hover {
+    background: rgb(214, 200, 7);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+/* Animación Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plato {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Efecto zoom al pasar el mouse */
+.plato img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.plato:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 1rem rgb(166, 7, 214));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Ajuste solo para la sección de Sobre Nosotros */
+.sobre-nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-items: center;
+}
+
+
+@media (min-width:768px) {
+    .sobre-nosotros-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.sobre-nosotros-grid .plato {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Línea decorativa */
+.linea-divisora {
+    width: 150px;
+    height: 4px;
+    background-color: rgb(166, 7, 214);
+    margin: 50px auto;
+    border-radius: 2px;
+}
+
+/* Reutilizable para historia, vision y galería */
+.grid-centrado {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-items: center;
+}
+
+@media (min-width:768px) {
+    .grid-centrado {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.grid-centrado .plato {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Fade-in */
+.plato {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.plato.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    background-color: #525252;
+    padding: 25px 10px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    color: rgb(255, 255, 255);
+}
+
+.footer .icon {
+    color: rgb(166, 7, 214);
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.footer p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer .direccion {
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.footer .redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Espaciado lateral entre los iconos */
+}
+
+.footer .redes-sociales a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px; /* Espacio entre el icono y el texto */
+}
+
+.footer .redes-sociales img {
+    width: 30px;  /* Tamaño más pequeño */
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer .redes-sociales a:hover img {
+    transform: scale(1.1); /* Pequeño efecto de agrandamiento */
+}
+
+/* Estilos del texto debajo de los iconos */
+.footer .redes-sociales p {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+/* Responsive */
+@media (min-width:768px) {
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+/* Cuando aparece */
+.footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
