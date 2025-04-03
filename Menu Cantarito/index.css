@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 *{
     margin: 0;
     border: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Winky Sans", sans-serif;
 }
 img{
     width: 90%;
@@ -28,7 +28,7 @@ body::before {
     background-position: center;
     background-attachment: fixed;
     z-index: -1; /* Para que la imagen esté por encima del degradado */
-    background-color: rgba(0, 0, 0, 0.8); /* Agrega una capa oscura */
+    background-color: rgba(0, 0, 0, 0.7); /* Agrega una capa oscura */
     background-blend-mode: multiply; /* Mezcla la imagen con el color oscuro */
 }
 
